@@ -6,6 +6,16 @@ const mongoose = require("mongoose");
 const port = process.env.PORT || 5000;
 require("dotenv").config();
 
+// Add Access Control Allow Origin headers
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept",
+  );
+  next();
+});
+
 // middlewares
 app.use(express.json());
 app.use(
