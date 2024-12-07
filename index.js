@@ -31,6 +31,7 @@ app.use("/api/admin", adminRoutes);
 async function main() {
   await mongoose.connect(process.env.DATABASE_URL);
   app.use("/", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     res.send("Bienvenido a la API de BookStore!");
   });
 }
