@@ -14,6 +14,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://book-shop-frontend-indol.vercel.app",
+      "book-shop-server-zeta.vercel.app"
     ],
     credentials: true,
   }),
