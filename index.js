@@ -11,11 +11,7 @@ app.use(express.json());
 app.use(
   cors({
      "Access-Control-Allow-Origin": "*",
-    origin: [
-      "http://localhost:5173",
-      "https://book-shop-frontend-indol.vercel.app",
-      "book-shop-server-zeta.vercel.app"
-    ],
+    origin: "*",
     credentials: true,
   }),
 );
