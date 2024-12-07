@@ -10,8 +10,6 @@ require("dotenv").config();
 app.use(express.json());
 app.use(
   cors({
-     "Access-Control-Allow-Origin": "*",
-    origin: "*",
     credentials: true,
   }),
 );
