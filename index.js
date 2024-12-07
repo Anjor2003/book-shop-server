@@ -6,19 +6,12 @@ const mongoose = require("mongoose");
 const port = process.env.PORT || 5000;
 require("dotenv").config();
 
-// Add Access Control Allow Origin headers
-app.use((req, res, next) => {
-  res.header(
-    { "Access-Control-Allow-Origin": "*"},
-  );
-  next();
-});
-
-// middlewares
+// middleware
 app.use(express.json());
-app.use(
-  cors()
-);
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://book-shop-frontend-indol.vercel.app'],
+    credentials: true
+}))
 
 // routes
 const bookRoutes = require("./src/books/book.route");
